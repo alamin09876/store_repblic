@@ -1,3 +1,4 @@
+import ConferenceIntro from "./components/Home/ConferenceIntro";
 import FutureEvents from "./components/Home/FutureEvents";
 import HeroSection from "./components/Home/HeroSection";
 import MarqueeUi from "./components/Home/MarqueeUi";
@@ -20,6 +21,7 @@ export default function Home() {
       <div>
         <MarqueeUi />
         <FutureEvents />
+        <ConferenceIntro />
       </div>
     </div>
   );
