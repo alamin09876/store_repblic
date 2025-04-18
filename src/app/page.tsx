@@ -1,7 +1,9 @@
 import ConferenceIntro from "./components/Home/ConferenceIntro";
+import FaqSection from "./components/Home/FaqSection";
 import FutureEvents from "./components/Home/FutureEvents";
 import HeroSection from "./components/Home/HeroSection";
 import MarqueeUi from "./components/Home/MarqueeUi";
+import PricingSection from "./components/Home/PricingSection";
 import Header from "./components/Shared/Header";
 
 export default function Home() {
@@ -22,6 +24,8 @@ export default function Home() {
         <MarqueeUi />
         <FutureEvents />
         <ConferenceIntro />
+        <FaqSection />
+        <PricingSection />
       </div>
     </div>
   );
