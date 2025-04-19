@@ -1,33 +1,47 @@
 "use client";
+
 import Link from "next/link";
 import React, { useState } from "react";
+import { PiDotsNine } from "react-icons/pi";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigationItems = ["Home", "Pages", "Blog", "Events", "Contact"];
+
+  const navigationItems = [
+    { label: "Home", href: "/home" },
+    { label: "Pages", href: "/pages" },
+    { label: "Blog", href: "/blog" },
+    { label: "Events", href: "/events" },
+    { label: "Contact", href: "/contact" },
+    {
+      label: "More",
+      href: "/more",
+      icon: <PiDotsNine className="text-xl md:text-2xl" />,
+    },
+  ];
 
   return (
-    <header className=" fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold text-white hover:text-gray-300 transition-colors"
+            className="text-xl md:text-2xl font-bold text-white hover:text-gray-300 transition-colors"
           >
             Daevnt
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden sm:block">
-            <ul className="flex space-x-6 md:space-x-8">
-              {navigationItems.map((item) => (
-                <li key={item}>
+          <nav className="hidden md:block">
+            <ul className="flex space-x-4 lg:space-x-6 xl:space-x-8">
+              {navigationItems.map(({ label, href, icon }) => (
+                <li key={label}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
-                    className="text-white font-medium hover:text-blue-400 transition-colors text-sm md:text-base"
+                    href={href}
+                    className="text-white font-medium hover:text-blue-400 transition-colors text-sm lg:text-base flex items-center gap-1 px-2 py-1"
                   >
-                    {item}
+                    {icon ? icon : label}
                   </Link>
                 </li>
               ))}
@@ -37,7 +51,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="sm:hidden p-2 rounded-md text-white hover:text-blue-400 hover:bg-white/10"
+            className="md:hidden p-2 rounded-md text-white hover:text-blue-400 hover:bg-white/10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -68,16 +82,17 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <div className="sm:hidden mt-4 bg-black/80 p-4 rounded-md shadow-md">
+          <div className="md:hidden mt-3 bg-black/90 backdrop-blur-sm p-4 rounded-md shadow-lg border border-white/10">
             <ul className="flex flex-col space-y-3">
-              {navigationItems.map((item) => (
-                <li key={item}>
+              {navigationItems.map(({ label, href, icon }) => (
+                <li key={label}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
-                    className="block text-white hover:text-blue-400 text-base"
-                    onClick={() => setIsMenuOpen(false)} // Close on click
+                    href={href}
+                    className="text-white hover:text-blue-400 text-base flex items-center gap-3 py-2"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    {item}
+                    {icon && <span className="text-xl">{icon}</span>}
+                    {label}
                   </Link>
                 </li>
               ))}
