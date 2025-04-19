@@ -1,3 +1,4 @@
+import BrandGrid from "./components/Home/BrandGrid";
 import ConferenceIntro from "./components/Home/ConferenceIntro";
 import FaqSection from "./components/Home/FaqSection";
 import FutureEvents from "./components/Home/FutureEvents";
@@ -26,6 +27,7 @@ export default function Home() {
         <MarqueeUi />
         <FutureEvents />
         <ConferenceIntro />
+        <BrandGrid />
         <FaqSection />
         <PricingSection />
         <RecentBlog />
