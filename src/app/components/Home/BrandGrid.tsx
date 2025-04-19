@@ -18,7 +18,7 @@ export default function BrandGrid() {
         {brands.map((brand) => (
           <div
             key={brand.id}
-            className="flex items-center gap-2 text-gray-300 w-full justify-center border-t border-b border-gray-700 py-16 "
+            className="flex items-center gap-2 text-gray-300 w-full justify-center border-t border-b border-[#7546FF] py-16 "
           >
             <div className="w-10 h-10 relative">
               <Image
