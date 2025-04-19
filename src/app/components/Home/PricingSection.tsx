@@ -82,7 +82,7 @@ export default function PricingSection() {
               </li>
             </ul>
           </div>
-          <button className="bg-white text-[#5a4bff] text-sm font-medium px-4 py-3 mx-14">
+          <button className="bg-white text-black text-sm font-medium px-4 py-3 mx-14">
             GET TICKET NOW
           </button>
         </div>

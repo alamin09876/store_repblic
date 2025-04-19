@@ -53,7 +53,7 @@ const HeroSection = () => {
       <div className="hidden lg:block absolute inset-0">
         <div className="relative text-white p-10">
           <div
-            className={`fixed -right-135 top-4/5 -rotate-90 origin-bottom-left text-gray-400 text-sm bg-gradient-to-b from-[#0E0812] to-[#111111] px-12 py-2 transition-opacity duration-500 ${
+            className={`fixed -right-135 top-4/5 -rotate-90 origin-bottom-left text-gray-400 text-sm bg-gradient-to-b from-[#0E0812] to-[#181818] px-12 py-2 transition-opacity duration-500 ${
               hideOnScroll ? "opacity-0" : "opacity-100"
             }`}
           >

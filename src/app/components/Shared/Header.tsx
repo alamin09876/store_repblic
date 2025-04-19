@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PiDotsNine } from "react-icons/pi";
 import imageOne from "../../../../public/assest/logoImage/logo.png";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   const navigationItems = [
     { label: "Home", href: "/home" },
@@ -28,49 +29,51 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scroll Down
-        setShowHeader(false);
-      } else {
-        // Scroll Up
-        setShowHeader(true);
-      }
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          if (Math.abs(currentScrollY - lastScrollY.current) > 10) {
+            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+              setShowHeader(false); // scroll down
+            } else {
+              setShowHeader(true); // scroll up
+            }
+            lastScrollY.current = currentScrollY;
+          }
+          ticking.current = false;
+        });
 
-      setLastScrollY(currentScrollY);
+        ticking.current = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 will-change-transform ${
         showHeader ? "translate-y-0" : "-translate-y-full"
-      } bg-transparent`}
+      } `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex gap-4">
-            <div>
-              <Image
-                src={imageOne}
-                alt="Mic Illustration"
-                width={50}
-                height={50}
-                className="mask-image-fade object-contain opacity-80"
-              />
-            </div>
-            <div>
-              <Link
-                href="/"
-                className="text-xl md:text-2xl font-bold text-white hover:text-gray-300 transition-colors"
-              >
-                Daevnt
-              </Link>
-            </div>
-          </div>
           {/* Logo */}
+          <div className="flex gap-4 items-center">
+            <Image
+              src={imageOne}
+              alt="Logo"
+              width={50}
+              height={50}
+              className="object-contain opacity-80"
+            />
+            <Link
+              href="/"
+              className="text-xl md:text-2xl font-bold text-white hover:text-gray-300 transition-colors"
+            >
+              Daevnt
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
@@ -120,7 +123,7 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
+        {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
           <div className="md:hidden mt-3 bg-black/90 backdrop-blur-sm p-4 rounded-md shadow-lg border border-white/10">
             <ul className="flex flex-col space-y-3">

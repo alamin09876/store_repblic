@@ -87,18 +87,18 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Address</h3>
-          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+          <h3 className="text-lg font-semibold mb-1">Address</h3>
+          <p className="text-sm text-gray-300 leading-relaxed mb-4">
             827 Roxanne Rd, Toronto,
             <br />
             ON M3A 1K5, Canada
           </p>
-          <p className="text-sm mb-1">
-            Phone:{" "}
+          <p className="text-sm mb-4">
+            Phone: <br />
             <span className="text-white font-medium">+1-416-8241228</span>
           </p>
           <p className="text-sm">
-            Email:{" "}
+            Email: <br />
             <span className="text-white font-medium">info@email.com</span>
           </p>
         </div>
