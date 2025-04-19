@@ -37,7 +37,7 @@ export default function EventList() {
             className="md:col-span-4 grid md:grid-cols-4 items-center border-b border-gray-700 pb-8"
           >
             {/* Event Details */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 lg:text-start text-center">
               <h3 className="font-semibold text-lg">{event.title}</h3>
               <p className="text-sm text-gray-400 mt-2">
                 Location: {event.location}

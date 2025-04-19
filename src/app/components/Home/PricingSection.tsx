@@ -1,5 +1,8 @@
 "use client";
 
+import { IoIosArrowDown } from "react-icons/io";
+import { TiTick } from "react-icons/ti";
+
 export default function PricingSection() {
   return (
     <section className="bg-[#fffaf5] px-4 py-16 md:px-20">
@@ -19,15 +22,32 @@ export default function PricingSection() {
           <div>
             <h3 className="text-lg font-semibold mb-2">Premium Pass</h3>
             <p className="text-4xl font-bold mb-1">$99</p>
-            <p className="text-sm text-gray-600 mb-4">1 Visitor</p>
+            <div className="flex  justify-center gap-2">
+              <p className="text-sm text-black mb-4">1 Visitor</p>
+              <div>
+                <IoIosArrowDown className="mt-1" />
+              </div>
+            </div>
             <ul className="space-y-2 text-left text-sm text-gray-700 mb-6">
-              <li>✔️ Access to all keynote sessions</li>
-              <li>✔️ Entry to exhibition area</li>
-              <li>❌ No access to workshops</li>
-              <li>❌ No networking lounge access</li>
+              <li className="flex">
+                <TiTick className="mt-1" />
+                <p>Access to all keynote sessions</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1" />
+                <p>Entry to exhibition area</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1" />
+                <p>No access to workshops</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1" />
+                <p>No networking lounge access</p>
+              </li>
             </ul>
           </div>
-          <button className="bg-[#5a4bff] text-white text-sm font-medium px-4 py-2 rounded-md">
+          <button className="bg-[#5a4bff] text-white text-sm font-medium px-4 py-3 mx-14">
             GET TICKET NOW
           </button>
         </div>
@@ -37,15 +57,32 @@ export default function PricingSection() {
           <div>
             <h3 className="text-lg font-semibold mb-2">Ordinary Pass</h3>
             <p className="text-4xl font-bold mb-1">$149</p>
-            <p className="text-sm mb-4">1 Visitor</p>
-            <ul className="space-y-2 text-left text-sm mb-6">
-              <li>✔️ Access to all keynote sessions</li>
-              <li>✔️ Entry to exhibition area</li>
-              <li>❌ No access to workshops</li>
-              <li>❌ No networking lounge access</li>
+            <div className="flex  justify-center gap-2">
+              <p className="text-sm text-white mb-4">1 Visitor</p>
+              <div>
+                <IoIosArrowDown className="mt-1 text-white" />
+              </div>
+            </div>
+            <ul className="space-y-2 text-left text-sm text-gray-700 mb-6">
+              <li className="flex">
+                <TiTick className="mt-1 text-white" />
+                <p className="text-white">Access to all keynote sessions</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1 text-white" />
+                <p className="text-white">Entry to exhibition area</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1 text-white" />
+                <p className="text-white">No access to workshops</p>
+              </li>
+              <li className="flex">
+                <TiTick className="mt-1 text-white" />
+                <p className="text-white">No networking lounge access</p>
+              </li>
             </ul>
           </div>
-          <button className="bg-white text-[#5a4bff] text-sm font-medium px-4 py-2 rounded-md">
+          <button className="bg-white text-[#5a4bff] text-sm font-medium px-4 py-3 mx-14">
             GET TICKET NOW
           </button>
         </div>
