@@ -14,9 +14,12 @@ const brands = [
 export default function BrandGrid() {
   return (
     <section className="bg-black py-10 px-6">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 justify-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 justify-items-center px-10">
         {brands.map((brand) => (
-          <div key={brand.id} className="flex items-center gap-2 text-gray-300">
+          <div
+            key={brand.id}
+            className="flex items-center gap-2 text-gray-300 w-full justify-center border-t border-b border-gray-700 py-16 "
+          >
             <div className="w-10 h-10 relative">
               <Image
                 src={brand.logo}
