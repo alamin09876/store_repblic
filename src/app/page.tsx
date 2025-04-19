@@ -4,6 +4,8 @@ import FutureEvents from "./components/Home/FutureEvents";
 import HeroSection from "./components/Home/HeroSection";
 import MarqueeUi from "./components/Home/MarqueeUi";
 import PricingSection from "./components/Home/PricingSection";
+import RecentBlog from "./components/Home/RecentBlog";
+import Footer from "./components/Shared/Footer";
 import Header from "./components/Shared/Header";
 
 export default function Home() {
@@ -26,6 +28,8 @@ export default function Home() {
         <ConferenceIntro />
         <FaqSection />
         <PricingSection />
+        <RecentBlog />
+        <Footer />
       </div>
     </div>
   );
