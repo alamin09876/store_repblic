@@ -35,7 +35,7 @@ const faqs = [
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState(0); // First item open by default
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -44,7 +44,6 @@ export default function FaqSection() {
   return (
     <section className="px-4 py-12 md:px-20 bg-white text-black">
       <div className="grid md:grid-cols-2 gap-10 items-start">
-        {/* Left Image */}
         <div className="w-[500px] h-[500px] rounded-xl overflow-hidden shadow-md">
           <Image
             src={faqImage}
@@ -55,7 +54,6 @@ export default function FaqSection() {
           />
         </div>
 
-        {/* Right FAQ Accordion */}
         <div className="space-y-6">
           {faqs.map((item, index) => (
             <div key={index}>

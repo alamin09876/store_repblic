@@ -26,7 +26,6 @@ export default function ConferenceIntro() {
     <section className="bg-black text-white px-4 py-16 md:px-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="grid grid-cols-6 gap-4">
-          {/* Full-width first image */}
           <div className="col-span-6  overflow-hidden max-w-[600px] max-h-[450px]">
             <Image
               src={image}
@@ -37,7 +36,6 @@ export default function ConferenceIntro() {
             />
           </div>
 
-          {/* Second image - spans 4 columns */}
           <div className="col-span-4  overflow-hidden max-w-[400px] max-h-[250px]">
             <Image
               src={imageOne}
@@ -48,7 +46,6 @@ export default function ConferenceIntro() {
             />
           </div>
 
-          {/* Third image - spans 2 columns */}
           <div className="col-span-2  overflow-hidden max-w-[200px] max-h-[250px]">
             <Image
               src={imageTwo}
@@ -60,7 +57,6 @@ export default function ConferenceIntro() {
           </div>
         </div>
 
-        {/* Right Section - Text */}
         <div>
           <p className="uppercase text-sm text-gray-400 mb-3">
             About the Conference

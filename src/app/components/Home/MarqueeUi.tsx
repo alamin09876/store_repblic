@@ -10,7 +10,6 @@ const reviews = [
 const ReviewCard = ({ name }: { name: string }) => {
   return (
     <div className="flex items-center gap-3 px-6">
-      {/* Yellow dot separator */}
       <div className="w-2 h-2 rounded-full bg-yellow-400" />
       <span className="text-white text-sm font-semibold whitespace-nowrap">
         {name}

@@ -36,7 +36,6 @@ export default function EventList() {
             key={idx}
             className="md:col-span-4 grid md:grid-cols-4 items-center border-b border-gray-700 pb-8"
           >
-            {/* Event Details */}
             <div className="md:col-span-1 lg:text-start text-center">
               <h3 className="font-semibold text-lg">{event.title}</h3>
               <p className="text-sm text-gray-400 mt-2">
@@ -44,7 +43,6 @@ export default function EventList() {
               </p>
             </div>
 
-            {/* Date */}
             <div className="md:col-span-1 flex items-center justify-center">
               <div className="text-center">
                 <p className="text-4xl font-bold">{event.date}</p>
@@ -52,12 +50,10 @@ export default function EventList() {
               </div>
             </div>
 
-            {/* Time */}
             <div className="md:col-span-1 text-center md:text-left">
               <p className="text-sm">{event.time}</p>
             </div>
 
-            {/* Button or Label */}
             <div className="md:col-span-1 flex justify-center md:justify-end mt-4 md:mt-0">
               {event.status === "Buy Ticket" ? (
                 <button className="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded">

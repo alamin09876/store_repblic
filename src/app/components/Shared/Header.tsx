@@ -33,9 +33,9 @@ const Header: React.FC = () => {
         window.requestAnimationFrame(() => {
           if (Math.abs(currentScrollY - lastScrollY.current) > 10) {
             if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-              setShowHeader(false); // scroll down
+              setShowHeader(false);
             } else {
-              setShowHeader(true); // scroll up
+              setShowHeader(true);
             }
             lastScrollY.current = currentScrollY;
           }
@@ -58,7 +58,6 @@ const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <div className="flex gap-4 items-center">
             <Image
               src={imageOne}
@@ -75,7 +74,6 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-4 lg:space-x-6 xl:space-x-8">
               {navigationItems.map(({ label, href, icon }) => (
@@ -91,7 +89,6 @@ const Header: React.FC = () => {
             </ul>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             className="md:hidden p-2 rounded-md text-white hover:text-blue-400 hover:bg-white/10"
@@ -123,7 +120,6 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
           <div className="md:hidden mt-3 bg-black/90 backdrop-blur-sm p-4 rounded-md shadow-lg border border-white/10">
             <ul className="flex flex-col space-y-3">

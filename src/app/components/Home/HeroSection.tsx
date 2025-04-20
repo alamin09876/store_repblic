@@ -7,7 +7,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setHideOnScroll(window.scrollY > 50); // Adjust threshold as needed
+      setHideOnScroll(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,18 +21,14 @@ const HeroSection = () => {
         backgroundImage: "url('/assest/image/placeholder.png')",
       }}
     >
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/90 z-0" />
 
-      {/* Content */}
       <div className="relative z-10 h-full grid grid-rows-[auto_1fr_auto] px-16 py-16">
-        {/* Top - Registration Info */}
         <div className="pt-8">
           <p className="text-sm text-white/70">Start Registration:</p>
           <p className="text-2xl font-semibold text-white">25 March 2025</p>
         </div>
 
-        {/* Center - Headline */}
         <div className="flex items-end">
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white max-w-[600px] lg:mt-0 -mt-20">
             JOIN ULTIMATE <br />
@@ -40,7 +36,6 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        {/* Bottom Right - CTA Button */}
         <div className="relative">
           <div className="absolute lg:bottom-0 lg:right-12 right-32 -bottom-14">
             <button className="bg-violet-600 hover:bg-violet-700 text-white text-sm px-6 py-3 rounded transition">

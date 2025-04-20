@@ -7,7 +7,6 @@ export default function PricingSection() {
   return (
     <section className="bg-[#fffaf5] px-4 py-16 md:px-20">
       <div className="grid md:grid-cols-3 gap-8 items-start">
-        {/* Left Text Section */}
         <div className="col-span-1">
           <h2 className="text-3xl font-bold mb-4">PRICING</h2>
           <p className="text-gray-700">
@@ -16,8 +15,6 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* Premium Pass Card */}
-        {/* Premium Pass Card */}
         <div className="bg-white rounded-xl shadow-lg p-6 text-center border border-gray-200 min-h-[450px] flex flex-col justify-between">
           <div>
             <h3 className="text-lg font-semibold mb-2">Premium Pass</h3>
@@ -52,7 +49,6 @@ export default function PricingSection() {
           </button>
         </div>
 
-        {/* Ordinary Pass Card */}
         <div className="bg-[#5a4bff] rounded-xl shadow-xl p-6 text-center text-white min-h-[450px] flex flex-col justify-between">
           <div>
             <h3 className="text-lg font-semibold mb-2">Ordinary Pass</h3>
